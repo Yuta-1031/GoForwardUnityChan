@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class UnityChanController : MonoBehaviour {
+	
 	Animator animator;
 	Rigidbody2D rigid2D;
 	private float groundLevel = -3.0f;
 	private float dump = 0.8f;
 	float jumpVelocity = 20;
 	private float deadLine = -9;
+    private bool isGround;
+	
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 		this.animator = GetComponent<Animator>();
 		this.rigid2D = GetComponent<Rigidbody2D>();
@@ -21,23 +24,31 @@ public class UnityChanController : MonoBehaviour {
 	void Update()
 	{
 		this.animator.SetFloat("Horizontal", 1);
-		bool isGorund = (transform.position.y > this.groundLevel) ? false : true;
-		this.animator.SetBool("isGround", isGorund);
+		this.animator.SetBool("isGround", isGround);
 
-		GetComponent<AudioSource>().volume = (isGorund) ? 1 : 0;
+		/*if (isGround == true)
+		{
+			Debug.Log(true);
+		}
+		else if (isGround == false)
+		{
+			Debug.Log(false);
+		}*/
 
-		if(Input.GetMouseButtonDown(0) && isGorund)
-        {
+
+		if (Input.GetMouseButtonDown(0) && isGround)
+		{
 			this.rigid2D.velocity = new Vector2(0, this.jumpVelocity);
-        }
+		}
 
-		if(Input.GetMouseButton(0) == false)
-        {
-			if(this.rigid2D.velocity.y > 0)
-            {
+
+		if (Input.GetMouseButton(0) == false)
+		{
+			if (this.rigid2D.velocity.y > 0)
+			{
 				this.rigid2D.velocity *= this.dump;
-            }
-        }
+			}
+		}
 
 		if(transform.position.x < this.deadLine)
         {
@@ -45,4 +56,25 @@ public class UnityChanController : MonoBehaviour {
 			Destroy(gameObject);
         }
 	}
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+
+		this.animator.SetFloat("Horizontal", 1);
+		isGround = true;
+		this.animator.SetBool("isGround", isGround);
+
+		/*if(isGround == true)
+        {
+			Debug.Log(true);
+        } else if (isGround == false)
+        {
+			Debug.Log(false);
+        }*/
+
+		//GetComponent<AudioSource>().volume = (isGround) ? 1 : 0;
+	}
+    void OnCollisionExit2D(Collision2D collision)
+    {
+		isGround = false;
+    }
 }

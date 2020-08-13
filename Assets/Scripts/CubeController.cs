@@ -6,6 +6,8 @@ public class CubeController : MonoBehaviour {
 	private float speed = -12;
 	private float deadLine = -10;
 
+
+
 	// Use this for initialization
 	void Start () {
 		
@@ -18,5 +20,7 @@ public class CubeController : MonoBehaviour {
         {
 			Destroy(gameObject);
         }
+
 	}
+
 }
