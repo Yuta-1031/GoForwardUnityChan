@@ -6,24 +6,29 @@ public class CubeDestroy : MonoBehaviour {
 	public GameObject effectPrefab;
 
 	// Use this for initialization
-	void Start () {
+	void Start()
+	{
 		
 	}
 
-	// Update is called once per frame
-	void Update()
+    void Update()
+    {
+	
+    }
+
+	public void OnTriggerEnter2D(Collider2D collision)
 	{
-
-	}
-
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
-
 		if (collision.gameObject.CompareTag("Ball"))
 		{
 			GameObject go = Instantiate(effectPrefab) as GameObject;
 			go.transform.position = this.transform.position;
+
+
 			Destroy(this.gameObject);
 		}
 	}
+
+	
 }
+
+

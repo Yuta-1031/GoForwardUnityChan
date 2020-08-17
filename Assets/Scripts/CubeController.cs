@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CubeController : MonoBehaviour {
 	private float speed = -12;
 	private float deadLine = -10;
-
 
 
 	// Use this for initialization

@@ -23,8 +23,7 @@ public class AudioController : MonoBehaviour {
 		}
 		else
 		{
-		audioSource.Play();
+			audioSource.Play();
 		}
 	}
-	
 }
