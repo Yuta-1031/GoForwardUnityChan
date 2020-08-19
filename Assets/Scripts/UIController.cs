@@ -7,20 +7,27 @@ using UnityEngine.SceneManagement;
 public class UIController : MonoBehaviour {
 	private GameObject gameOverText;
 	private GameObject runLengthText;
+	private GameObject lifeText;
+	private int lifeNum;
 	private float len = 0;
 	private float speed = 0.03f;
 	private bool isGameOver = false;
 
 	// Use this for initialization
-	void Start () {
+	void Start()
+	{
 		this.gameOverText = GameObject.Find("GameOver");
 		this.runLengthText = GameObject.Find("RunLength");
-
+		this.lifeText = GameObject.Find("Life");
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(this.isGameOver == false)
+
+		this.lifeText.GetComponent<Text>().text = "Life: " + GManager.instance.life;
+
+		if (this.isGameOver == false)
         {
 			this.len += this.speed;
 			this.runLengthText.GetComponent<Text>().text = "Distance: " + len.ToString("F2") + "m";

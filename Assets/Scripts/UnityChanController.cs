@@ -14,7 +14,6 @@ public class UnityChanController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
 		this.animator = GetComponent<Animator>();
 		this.rigid2D = GetComponent<Rigidbody2D>();
 	}

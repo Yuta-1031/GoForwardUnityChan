@@ -10,7 +10,7 @@ public class CubeGenerator : MonoBehaviour {
 	private float delta = 0;
 	private float span = 1.0f;
 	private float genPosX = 12;
-	private float offsetY = 2.0f;
+	private float offsetY = 3.0f;
 	private float spaceY = 6.9f;
 	private float offsetX = 0.5f;
 	private float spaceX = 0.4f;

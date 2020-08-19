@@ -26,9 +26,9 @@ public class SecondUnityChan : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
 	{
-		Vector2 unityChan2pos = this.transform.position;
-		pos_x = unityChan2pos.x;
-		pos_y = unityChan2pos.y;
+		Vector2 unityChanpos = this.transform.position;
+		pos_x = unityChanpos.x;
+		pos_y = unityChanpos.y;
 
         if (Input.GetMouseButtonDown(1)) {
 			GameObject ball = Instantiate(ballPrefab) as GameObject;
@@ -56,8 +56,13 @@ public class SecondUnityChan : MonoBehaviour {
 
 		if (transform.position.x < this.deadLine)
 		{
-			GameObject.Find("Canvas").GetComponent<UIController>().GameOver();
 			Destroy(gameObject);
+			GManager.instance.life -= 1;
+
+			if(GManager.instance.life == 0)
+            {
+				GameObject.Find("Canvas").GetComponent<UIController>().GameOver();
+			}
 		}
 	}
 

@@ -3,28 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnScript : MonoBehaviour {
-	public GameObject unityChan2;
+	//public GameObject unityChan2;
 	public Transform spawnPoint;
 	bool coll = false;
+	private GameObject UnityChan;
 
 	// Use this for initialization
 	void Start () {
+
+		this.UnityChan = Instantiate(GManager.instance.unityChan, spawnPoint.position, Quaternion.identity) as GameObject;
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Vector2 unityChanPosition = GameObject.Find("UnityChan2D").transform.position;
-		float x = unityChanPosition.x;
 
+		//Vector2 unityChanPosition = UnityChan.transform.position;
+		//float x = unityChanPosition.x;
 
-		if(x < -9)
+		if(GManager.instance.life == 2)
         {
-			if (!coll)
-			{
+            if (!coll) {
 				coll = true;
-				GameObject UnityChan2 = Instantiate(unityChan2, spawnPoint.position, Quaternion.identity) as GameObject;
+				GameObject UnityChan2 = Instantiate(GManager.instance.unityChan, spawnPoint.position, Quaternion.identity) as GameObject;
 			}
-        }
+		}
+
+		if (GManager.instance.life == 1)
+		{
+			if (coll)
+			{
+				coll = false;
+				GameObject UnityChan3 = Instantiate(GManager.instance.unityChan, spawnPoint.position, Quaternion.identity) as GameObject;
+			}
+		}
 	}
 }

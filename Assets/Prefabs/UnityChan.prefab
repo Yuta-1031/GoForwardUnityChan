@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 61763978473372404}
   - component: {fileID: 114157427967208666}
   m_Layer: 0
-  m_Name: UnityChan2
+  m_Name: UnityChan
   m_TagString: UnityChan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
