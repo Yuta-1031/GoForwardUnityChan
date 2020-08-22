@@ -182,6 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be488145977044a4dbda242139fe0302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  run: 0
 --- !u!4 &157215280
 Transform:
   m_ObjectHideFlags: 0
@@ -210,7 +211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &226450722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,10 +223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700cbfc0cbdf8412f869d8b92c122e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundPrefab: {fileID: 1995460911611400, guid: afd139513c42349538e96d4adcab636a,
-    type: 2}
-  stonePrefab: {fileID: 1866050184825932, guid: 01b066580b22848c8a147fce52c71351,
-    type: 2}
 --- !u!4 &226450723
 Transform:
   m_ObjectHideFlags: 0
@@ -264,14 +261,14 @@ RectTransform:
   m_GameObject: {fileID: 389366924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children: []
   m_Father: {fileID: 865224812}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 310, y: -71}
+  m_AnchoredPosition: {x: 410, y: -71}
   m_SizeDelta: {x: 300, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &389366926
@@ -294,7 +291,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
@@ -588,6 +585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be488145977044a4dbda242139fe0302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  run: 0
 --- !u!114 &865224809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,7 +865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1305372522
 RectTransform:
   m_ObjectHideFlags: 0
@@ -952,9 +950,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f0d24da9a1448c8928e025412943a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stonePrefab: {fileID: 1768033627685200, guid: 792a830c0bad04601a1563b505a66907,
+  blockPrefab: {fileID: 1843974361865266, guid: 465bc833241ad40518604a294a205a47,
     type: 2}
   cubePrefab: {fileID: 1407450728044786, guid: 850902314958f4cb187b1daf9a788769, type: 2}
+  groundPrefab: {fileID: 1995460911611400, guid: afd139513c42349538e96d4adcab636a,
+    type: 2}
+  stonePrefab: {fileID: 1866050184825932, guid: 01b066580b22848c8a147fce52c71351,
+    type: 2}
 --- !u!4 &1337619102
 Transform:
   m_ObjectHideFlags: 0
@@ -1091,7 +1093,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.23137255, g: 0.44313726, b: 0.77254903, a: 0}
+  m_BackGroundColor: {r: 0.023529412, g: 0.12156863, b: 0.16862746, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1340,14 +1342,14 @@ RectTransform:
   m_GameObject: {fileID: 1946989378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children: []
   m_Father: {fileID: 865224812}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -300, y: -71}
+  m_AnchoredPosition: {x: -373, y: -71}
   m_SizeDelta: {x: 300, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1946989380
@@ -1370,13 +1372,13 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

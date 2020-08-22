@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class ScoreScript : MonoBehaviour {
-
-	public Text scoreText;
+public class RestartScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Text score = scoreText.GetComponent<Text>();
-		score.text = "Score: " + GManager.instance.runLength.ToString("F2") + "m";
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		
 	}
+
+	public void Retry()
+    {
+		SceneManager.LoadScene("GameScene");
+    }
 }

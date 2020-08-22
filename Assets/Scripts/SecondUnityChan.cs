@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SecondUnityChan : MonoBehaviour {
 
-	private float deadLine = -9;
+	private float deadLine = -8;
 	Animator animator;
 	Rigidbody2D rigid2D;
 	private float dump = 0.8f;
@@ -61,7 +62,9 @@ public class SecondUnityChan : MonoBehaviour {
 
 			if(GManager.instance.life == 0)
             {
-				GameObject.Find("Canvas").GetComponent<UIController>().GameOver();
+				GManager.instance.isGameOver = true;
+				SceneManager.LoadScene("GameOverScene");
+				//GameObject.Find("Canvas").GetComponent<UIController>().GameOver();
 			}
 		}
 	}

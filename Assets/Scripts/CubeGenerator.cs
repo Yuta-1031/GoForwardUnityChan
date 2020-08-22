@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections;
+//using System.Collections;
 
 public class CubeGenerator : MonoBehaviour {
 
-	public GameObject stonePrefab;
+	public GameObject blockPrefab;
 	public GameObject cubePrefab;
+	public GameObject groundPrefab;
+	public GameObject stonePrefab;
 	private float delta = 0;
 	private float span = 1.0f;
 	private float genPosX = 12;
@@ -35,13 +37,25 @@ public class CubeGenerator : MonoBehaviour {
 				int n = Random.Range(1, maxBlockNum);
 				for (int i = 0; i < n; i++)
 				{
-					int spwan = Random.Range(1, 7);
+					int spwan = Random.Range(1, 10);
 					if (spwan == 1)
 					{
-						GameObject stone = Instantiate(stonePrefab) as GameObject;
+						GameObject stone = Instantiate(blockPrefab) as GameObject;
 						stone.transform.position = new Vector2(this.genPosX, this.offsetY + i * this.spaceY);
-
-					}
+					} else if(spwan == 2)
+                    {
+						GameObject Stone1 = Instantiate(stonePrefab) as GameObject;
+						Stone1.transform.position = new Vector2(13.0f, -1.0f);
+						GameObject Stone2 = Instantiate(stonePrefab) as GameObject;
+						Stone2.transform.position = new Vector2(13.5f, -1.0f);
+					} else if (spwan == 3){
+						GameObject Ground1 = Instantiate(groundPrefab) as GameObject;
+						Ground1.transform.position = new Vector2(13.0f, -1.0f);
+						GameObject Ground2 = Instantiate(groundPrefab) as GameObject;
+						Ground2.transform.position = new Vector2(13.0f, -1.0f);
+						GameObject Ground3 = Instantiate(groundPrefab) as GameObject;
+						Ground3.transform.position = new Vector2(13.0f, -1.0f);
+					} 
 					else
 					{
 						GameObject go = Instantiate(cubePrefab) as GameObject;

@@ -140,7 +140,7 @@ RectTransform:
   m_GameObject: {fileID: 261972007}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 3.1903112, z: 1.5}
+  m_LocalScale: {x: 1.5, y: 3.2, z: 1.5}
   m_Children:
   - {fileID: 364180862}
   m_Father: {fileID: 1513720885}
@@ -937,7 +937,6 @@ GameObject:
   - component: {fileID: 1933521117}
   - component: {fileID: 1933521120}
   - component: {fileID: 1933521119}
-  - component: {fileID: 1933521122}
   - component: {fileID: 1933521121}
   m_Layer: 5
   m_Name: Text
@@ -954,7 +953,7 @@ RectTransform:
   m_GameObject: {fileID: 1933521115}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 41.15305, y: 92.07765, z: 20.705946}
+  m_LocalScale: {x: 44.75394, y: 93.83151, z: 20.705946}
   m_Children: []
   m_Father: {fileID: 1513720885}
   m_RootOrder: 1
@@ -1075,21 +1074,3 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!320 &1933521122
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1933521115}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 3f0cb418750994546b81e4f10ed7f9f3, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: 114077751342272474, guid: 3f0cb418750994546b81e4f10ed7f9f3, type: 2}
-    value: {fileID: 1933521115}
-  m_ExposedReferences:
-    m_References: []

@@ -6,7 +6,7 @@ public class UnityChanController : MonoBehaviour {
 	
 	Animator animator;
 	Rigidbody2D rigid2D;
-	private float dump = 0.8f;
+	private float dump = 1.0f;
 	float jumpVelocity = 20;
 	private float deadLine = -9;
     private bool isGround;
