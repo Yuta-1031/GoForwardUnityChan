@@ -27,8 +27,6 @@ public class CubeDestroy : MonoBehaviour {
 			Destroy(this.gameObject);
 		}
 	}
-
-	
 }
 
 

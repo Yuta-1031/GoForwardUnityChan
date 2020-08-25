@@ -11,7 +11,7 @@ public class GManager : MonoBehaviour {
     public float runLength;
     public bool isGameOver = false;
     public GameObject unityChan;
-
+    public float gaugeMax = 0;
 
     private void Awake()
     {

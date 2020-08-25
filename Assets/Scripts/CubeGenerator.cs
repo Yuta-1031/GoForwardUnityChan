@@ -7,8 +7,9 @@ public class CubeGenerator : MonoBehaviour {
 
 	public GameObject blockPrefab;
 	public GameObject cubePrefab;
-	public GameObject groundPrefab;
+	//public GameObject groundPrefab;
 	public GameObject stonePrefab;
+	public GameObject gBlockPrefab;
 	private float delta = 0;
 	private float span = 1.0f;
 	private float genPosX = 12;
@@ -24,50 +25,57 @@ public class CubeGenerator : MonoBehaviour {
 	}
 
 
-    // Update is called once per frame
-    void Update()
+	// Update is called once per frame
+	void Update()
 	{
 		this.delta += Time.deltaTime;
 		this.spwan += Time.deltaTime;
-		if(spwan > 5)
-        {
+		if (spwan > 5)
+		{
 			if (this.delta > this.span)
 			{
 				this.delta = 0;
 				int n = Random.Range(1, maxBlockNum);
 				for (int i = 0; i < n; i++)
 				{
-					int spwan = Random.Range(1, 10);
+					int spwan = Random.Range(1, 7);
+
+					
 					if (spwan == 1)
 					{
-						GameObject stone = Instantiate(blockPrefab) as GameObject;
-						stone.transform.position = new Vector2(this.genPosX, this.offsetY + i * this.spaceY);
-					} else if(spwan == 2)
-                    {
+						GameObject block = Instantiate(blockPrefab) as GameObject;
+						block.transform.position = new Vector2(this.genPosX, this.offsetY + i * this.spaceY);
+					}
+					else if (spwan == 2)
+					{
 						GameObject Stone1 = Instantiate(stonePrefab) as GameObject;
 						Stone1.transform.position = new Vector2(13.0f, -1.0f);
-						GameObject Stone2 = Instantiate(stonePrefab) as GameObject;
-						Stone2.transform.position = new Vector2(13.5f, -1.0f);
-					} else if (spwan == 3){
+					}
+					/*else if (spwan == 3)
+					{
 						GameObject Ground1 = Instantiate(groundPrefab) as GameObject;
-						Ground1.transform.position = new Vector2(13.0f, -1.0f);
+						Ground1.transform.position = new Vector2(14.0f, -1.0f);
 						GameObject Ground2 = Instantiate(groundPrefab) as GameObject;
-						Ground2.transform.position = new Vector2(13.0f, -1.0f);
+						Ground2.transform.position = new Vector2(14.0f, -1.0f);
 						GameObject Ground3 = Instantiate(groundPrefab) as GameObject;
-						Ground3.transform.position = new Vector2(13.0f, -1.0f);
-					} 
+						Ground3.transform.position = new Vector2(14.0f, -1.0f);
+					}*/
+					else if (spwan == 4)
+					{
+						GameObject gBlock = Instantiate(gBlockPrefab) as GameObject;
+						gBlock.transform.position = new Vector2(this.genPosX, this.offsetY + i * this.spaceY);
+					}
 					else
 					{
 						GameObject go = Instantiate(cubePrefab) as GameObject;
 						go.transform.position = new Vector2(this.genPosX, this.offsetY + i * this.spaceY);
 					}
-				}
+					}
 					this.span = this.offsetX + this.spaceX * n;
+				}
+
 			}
-	
+
 		}
-
-    }
-
-}
+	}
 

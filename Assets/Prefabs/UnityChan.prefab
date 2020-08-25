@@ -147,6 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 1513882025867180, guid: f6de95665a3374173801730d12a3c35d, type: 2}
+  bigBallPrefab: {fileID: 1916970907839394, guid: 0c6a79552291744bfb53a8d31475838a,
+    type: 2}
 --- !u!212 &212212392310847888
 SpriteRenderer:
   m_ObjectHideFlags: 1

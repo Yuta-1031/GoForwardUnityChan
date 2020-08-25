@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BallGenerator : MonoBehaviour {
 	public GameObject ballPrefab;
-	GameObject ball;
+	public GameObject bigBallPrefab;
+	//GameObject ball;
 	public Transform m_muzzle;
 
 	// Use this for initialization
@@ -16,6 +17,10 @@ public class BallGenerator : MonoBehaviour {
 
 		if (Input.GetMouseButtonDown(1))
 		{
+			if(GManager.instance.gaugeMax == 5)
+            {
+				GameObject bigBall = Instantiate(bigBallPrefab);
+            }
 			GameObject ball = Instantiate(ballPrefab, m_muzzle.position, Quaternion.identity) as GameObject;
 		}
 

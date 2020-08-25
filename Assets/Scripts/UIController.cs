@@ -29,13 +29,13 @@ public class UIController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		this.lifeText.GetComponent<Text>().text = "Life: " + GManager.instance.life;
-		this.runLengthText.GetComponent<Text>().text = "Distance: " + run;
+		this.lifeText.GetComponent<Text>().text = "Life: " + GManager.instance.life + " ";
+		this.runLengthText.GetComponent<Text>().text = "Distance: " + run + " ";
 		
 		if (GManager.instance.isGameOver == false)
         {
 			run += this.speed;
-			this.runLengthText.GetComponent<Text>().text = "Distance: " + run.ToString("F2") + "m";
+			this.runLengthText.GetComponent<Text>().text = "Distance: " + run.ToString("F2") + "m" + " ";
         }
 		GManager.instance.runLength = run;
 
